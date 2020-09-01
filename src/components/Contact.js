@@ -2,9 +2,14 @@ import React from 'react';
 
 const Contact = () => {
     return ( 
-        <div className='container'>
-            <h4 className='center'>Contact</h4>
-            <p>Hi, Thanks for dropping by. Enjoy your day !</p>
+        <div className='container contact'>
+            <h3 className='center'>Contact</h3>
+            <p className='center'> Hi, Thanks for dropping by. 
+                Contact for more fun apps.
+
+                Developer Name : Shorya Singh Thakur
+                Contact Number : 9736xxxxxx
+            </p>
         </div>
      );
 }
