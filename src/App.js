@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import User from './components/User';
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
           <Route path='/contact' component={Contact} />
           <Route path='/:user_id' component={User} />
         </Switch>
+        
       </div>
     </BrowserRouter>
   );

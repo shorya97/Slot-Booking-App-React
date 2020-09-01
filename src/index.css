@@ -12,10 +12,22 @@ code {
     monospace;
 }
 
-.contact p{
-  white-space:pre;
-}
 
 .home .post img{
   border-radius: 50%;
+}
+
+.card .card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+  line-height: 130px;
+  padding-right:400px;
+  text-align: right;
+}
+
+.card .card-title {
+  font-size: 24px;
+  font-weight:bold;
+  float: right;
 }

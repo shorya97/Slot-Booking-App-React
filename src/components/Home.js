@@ -1,47 +1,66 @@
-import React, { Component } from 'react';
+import React , { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useCombobox } from 'downshift';
+import { Input } from 'antd';
 
-
-class Home extends Component {
-    state = {
-        users: [ ]
-    }
-    componentDidMount(){
+const Home = () => {
+    const [ users, setUsers ] = useState([]);
+    const [ inputItems, setInputItems ] = useState([]);
+    
+    useEffect(()=>{
         axios.get('https://reqres.in/api/users/')
             .then(res => {
-                this.setState({
-                    users: res.data.data
-                })
+                setUsers(res.data.data)
+                console.log(res.data.data)
             })
-    }
-    render() {
-        const { users } = this.state;
-        const userList = users.length ? (
-            users.map(user => {
-                return(
-                    <div className='post card' key={user.id}>
-                        <div className='card-content'>
-                        <Link to={'/' + user.id} >
-                            <span className='card-title blue-text'>{user.first_name} {user.last_name}</span>
-                        </Link>
-                        <img src={user.avatar} alt='Display picture'></img>
-                        </div>
-                    </div> 
-                )
+            .catch(err => {
+                console.log(err)
             })
-        ) : (
-            <div className='center'> No users yet </div>
-        )
+    }, []);
 
-        return ( 
-            <div className='container home'>
-                <h3 className='center'>Home</h3>
-                {userList}
+    const {
+        getMenuProps,
+        getInputProps,
+        getComboboxProps,
+    } = useCombobox({
+        items: inputItems,
+        onInputValueChange: ({inputValue}) => {
+            setInputItems(
+                users.filter((item) =>
+                    item.first_name.toLowerCase().startsWith(inputValue.toLowerCase()))
+            )
+        }
+    })
+
+    return (
+        <div className='container'>
+            <h3 className='center'>Home</h3>
+            <div {...getComboboxProps()}>
+                <Input 
+                    {...getInputProps()}
+                    placeholder="Search"
+                    enterButton="Search"
+                    size="large"
+                />
             </div>
-         );
-    }
-    
+            <ul {...getMenuProps()}>
+                {
+                    inputItems.map((item,index) => (
+                        <div className='post card' key={item.id}>
+                            <div className='card-content'>
+                            <Link to={'/' + item.id} >
+                                <span className='card-title red-text'>{item.first_name} {item.last_name}</span>
+                            </Link>
+                            <img src={item.avatar} alt='img'></img>
+                            </div>
+                        </div>
+                        )
+                    )
+                }
+            </ul>
+        </div>
+     )
 }
- 
 export default Home;
+

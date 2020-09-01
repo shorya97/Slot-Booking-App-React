@@ -6,7 +6,7 @@ const Navbar = () => {
     return(
         <nav className='nav wrapper blue darken-2'>
             <div className='container'>
-                <a className='brand-logo'>Booking Guru</a>
+                <a className='brand-logo' href='/'>Booking Guru</a>
                 <ul className='right'>
                     <li><Link to='/'>Home</Link></li>
                     <li><NavLink to='/bookings'>Bookings</NavLink></li>
