@@ -1,0 +1,8 @@
+oauth_id = 1039990965609-s7cck6qmnh2hdbcrgqtbsnih5gph5j47.apps.googleusercontent.com
+secret = OOy8srsub6hhJnfiZG3AQgvL
+
+
+client id  = 885277923036-28j2luktsmbqci3j63egk49gdq26mq3g.apps.googleusercontent.com
+client secret = iwc75YFHFRFB0GOez2BSMD6j
+
+api key = AIzaSyC5sp-auvE0CA2pGULhLpz9XrRRm257Fg4

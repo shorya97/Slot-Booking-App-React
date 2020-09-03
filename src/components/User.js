@@ -5,6 +5,7 @@ class User extends Component {
     state={
         user: null
     }
+
     componentDidMount(){
         let id = this.props.match.params.user_id;
         axios.get('https://reqres.in/api/users/' + id)
@@ -14,6 +15,11 @@ class User extends Component {
                 })
             })
     }
+
+    handlebooking(){
+        alert('Hey there !')
+    }
+
     render() { 
 
         const user = this.state.user ? (
@@ -22,8 +28,7 @@ class User extends Component {
                 <p>First Name : {this.state.user.first_name}</p>
                 <p>Last Name : {this.state.user.last_name}</p>
                 <p>Email : {this.state.user.email}</p>
-
-
+                <button onClick={ this.handlebooking }>Book A Slot</button>
             </div>
         ) : (
             <div className='center'>Loading User...</div>

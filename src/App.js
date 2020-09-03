@@ -20,7 +20,6 @@ function App() {
           <Route path='/contact' component={Contact} />
           <Route path='/:user_id' component={User} />
         </Switch>
-        
       </div>
     </BrowserRouter>
   );

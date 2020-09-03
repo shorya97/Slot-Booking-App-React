@@ -12,6 +12,7 @@ const Home = () => {
         axios.get('https://reqres.in/api/users/')
             .then(res => {
                 setUsers(res.data.data)
+                setInputItems(res.data.data)
                 console.log(res.data.data)
             })
             .catch(err => {
@@ -24,11 +25,12 @@ const Home = () => {
         getInputProps,
         getComboboxProps,
     } = useCombobox({
-        items: inputItems,
+        items: users ,
         onInputValueChange: ({inputValue}) => {
             setInputItems(
                 users.filter((item) =>
-                    item.first_name.toLowerCase().startsWith(inputValue.toLowerCase()))
+                    item.first_name.toLowerCase().startsWith(inputValue.toLowerCase()) ||
+                    item.last_name.toLowerCase().startsWith(inputValue.toLowerCase()))              
             )
         }
     })
@@ -36,10 +38,10 @@ const Home = () => {
     return (
         <div className='container'>
             <h3 className='center'>Home</h3>
-            <div {...getComboboxProps()}>
+            <div className='input-field col s12' {...getComboboxProps()}>
                 <Input 
                     {...getInputProps()}
-                    placeholder="Search"
+                    placeholder="Enter your search keyword"
                     enterButton="Search"
                     size="large"
                 />
