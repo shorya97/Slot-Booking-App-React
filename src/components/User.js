@@ -17,23 +17,15 @@ class User extends Component {
             })
     }
 
-    handlebooking(){
-        alert('Hey there !')
-    }
-
-    redirect(){
-
-    }
-
     render() { 
 
         const user = this.state.user ? (
             <div className='user'>
                 <h4 className='center'>{this.state.user.first_name} {this.state.user.last_name}</h4>
-                <p>First Name : {this.state.user.first_name}</p>
-                <p>Last Name : {this.state.user.last_name}</p>
-                <p>Email : {this.state.user.email}</p>
-                <Link><NavLink to='/bookings'>Book A Slot</NavLink></Link>
+                <p>FIRST NAME : {this.state.user.first_name}</p>
+                <p>LAST NAME : {this.state.user.last_name}</p>
+                <p>EMAIL : {this.state.user.email}</p>
+                <Link><NavLink to='/bookings'>BOOK A SLOT</NavLink></Link>
             </div>
         ) : (
             <div className='center'>Loading User...</div>

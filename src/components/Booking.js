@@ -40,7 +40,6 @@ class Booking extends Component {
         this.setState({
             [e.target.id]: e.target.value
         })
-        //e.preventDefault();
     }
 
     //On Submit
@@ -70,12 +69,6 @@ class Booking extends Component {
                     loading: false,
                     message: res.data
                 })
-                /* .catch(err => {
-                    console.log(err);
-                    this.setState({
-                        loading: false
-                    })
-                }) */
             })
         this.state.name=""
         this.state.date=""
@@ -111,22 +104,6 @@ class Booking extends Component {
             onCloseEnd: context.handleTime
 
         });
-        
-        /* document.addEventListener('DOMContentLoaded', function() {
-            var elemsDates = document.querySelectorAll('.datepicker');
-            
-            var elemsTimes = document.querySelectorAll('.timepicker');
-            M.Timepicker.init(elemsTimes, {
-                showClearBtn: true,
-                defaultTime: "now",
-                twelveHour: true,
-                vibrate: true,
-                onCloseEnd: context.handleTime
-
-            });
-          });
-         */
-          console.log('hi there');
     };
 
     render(){
