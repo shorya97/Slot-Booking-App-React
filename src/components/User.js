@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link, NavLink } from 'react-router-dom';
 
 class User extends Component {
     state={
@@ -20,6 +21,10 @@ class User extends Component {
         alert('Hey there !')
     }
 
+    redirect(){
+
+    }
+
     render() { 
 
         const user = this.state.user ? (
@@ -28,7 +33,7 @@ class User extends Component {
                 <p>First Name : {this.state.user.first_name}</p>
                 <p>Last Name : {this.state.user.last_name}</p>
                 <p>Email : {this.state.user.email}</p>
-                <button onClick={ this.handlebooking }>Book A Slot</button>
+                <Link><NavLink to='/bookings'>Book A Slot</NavLink></Link>
             </div>
         ) : (
             <div className='center'>Loading User...</div>

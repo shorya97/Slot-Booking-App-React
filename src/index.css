@@ -31,3 +31,8 @@ code {
   font-weight:bold;
   float: right;
 }
+
+.row {
+  padding-left: 130px;
+  padding-top: 10px ;
+}

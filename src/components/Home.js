@@ -13,7 +13,6 @@ const Home = () => {
             .then(res => {
                 setUsers(res.data.data)
                 setInputItems(res.data.data)
-                console.log(res.data.data)
             })
             .catch(err => {
                 console.log(err)
@@ -42,7 +41,7 @@ const Home = () => {
                 <Input 
                     {...getInputProps()}
                     placeholder="Enter your search keyword"
-                    enterButton="Search"
+                    enterbutton="Search"
                     size="large"
                 />
             </div>
