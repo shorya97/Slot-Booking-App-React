@@ -62,7 +62,7 @@ class Booking extends Component {
             endtime
         }
 
-        axios.post('/t/slotBookingAPP/post', data)
+        axios.post('/t/slotbookingapp/post', data)
             .then(res =>{
                 console.log(res);
                 this.setState({
